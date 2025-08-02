@@ -56,13 +56,8 @@ ol {
 .content {
   display: flex;
   width: 1140px;
-  height: 534px;
   align-items: end;
   gap: 30px;
-}
-
-.result {
-  max-height: 711px;
 }
 
 .search-form {
@@ -101,6 +96,7 @@ ol {
   padding-left: 3px;
   padding-right: 3px;
   padding-bottom: 2px;
+  position: relative;
 }
 
 .content__list {
@@ -143,10 +139,12 @@ ol {
   height: 386px;
   width: 711px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .result__video {
-  object-fit: fill;
+  object-position: center;
+  object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -173,7 +171,7 @@ ol {
 .content__video-card-thumbnail {
   height: 103px;
   min-width: 194px;
-  object-fit: fill;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -211,8 +209,6 @@ ol {
   cursor: pointer;
 }
 
-/* Вроде в задании указано, что outline должно быть только у focus-visible,
-но не у focus, оно вообще никак не убирается с этим свойством у элемента с вводом текста */
 .search-form__label:has(:focus-visible) {
   outline: 1px solid white;
   outline-offset: 2px;
@@ -244,7 +240,7 @@ ol {
   padding-left: 0;
   min-width: 225px;
   min-height: 27px;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 .search-form__textfield:focus {
@@ -285,7 +281,7 @@ ol {
   min-height: 34px;
   color: white;
   border: 1px solid white;
-  font-family: "Fira Sans Condensed";
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: bold;
   background-color: transparent;
@@ -317,12 +313,4 @@ ol {
 .button:focus-visible {
   outline: 1px solid white;
   outline-offset: 2px;
-}
-
-.result__video-container {
-  position: relative;
-}
-
-.content__list-container {
-  position: relative;
 }
